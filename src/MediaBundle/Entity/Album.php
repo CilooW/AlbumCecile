@@ -3,6 +3,7 @@
 namespace MediaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use MediaBundle\Entity\Commentaire as Commentaire;
 
 /**
  * Album
@@ -155,7 +156,7 @@ class Album
      *
      * @return Album
      */
-    public function addComm(\MediaBundle\Entity\Commentaire $comm)
+    public function addComm(Commentaire $comm)
     {
         $this->comms[] = $comm;
 
@@ -167,7 +168,7 @@ class Album
      *
      * @param \MediaBundle\Entity\Commentaire $comm
      */
-    public function removeComm(\MediaBundle\Entity\Commentaire $comm)
+    public function removeComm(Commentaire $comm)
     {
         $this->comms->removeElement($comm);
     }

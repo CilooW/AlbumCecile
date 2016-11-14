@@ -31,7 +31,7 @@ class LoadAlbumData extends AbstractFixture implements FixtureInterface
         $manager->flush();
         $manager->clear();
 
-        $this->addReference('album', $album);
+        $this->addReference('album-ghibli', $album);
     }
 
     public function getOrder()

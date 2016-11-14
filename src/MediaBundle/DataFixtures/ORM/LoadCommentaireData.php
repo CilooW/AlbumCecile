@@ -11,7 +11,7 @@ use MediaBundle\Entity\Commentaire;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 
-class LoadAlbumData extends AbstractFixture implements FixtureInterface
+class LoadCommentaireData extends AbstractFixture implements FixtureInterface
 {
 
     /**
@@ -22,10 +22,10 @@ class LoadAlbumData extends AbstractFixture implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $commentaire = new Commentaire();
-        $commentaire->setAlbums('Studio Ghibli');
-        $commentaire->setCommentaire('Absolument parfait');
+
         $commentaire->setUtilisateur('Ciloo');
-        $commentaire->
+        $commentaire->setCommentaire('Absolument parfait');
+        $commentaire->setAlbums($this->getReference('album-ghibli'));
 
         $manager->persist($commentaire);
         $manager->flush();
