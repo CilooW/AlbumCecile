@@ -12,7 +12,7 @@ suivi la procédure jusqu'au point 7.
 5. Avoir le choix entre 3 genres et 3 support à la création d'un album : OK
 6. Mise en page simple de l'index et du formulaire : En cours
 7. Créer une entité commentaire : OK
-8. Faire une relation OneToMany: OK, mais j'ai voulu ajouter des fixture, et la jointure est pas ok dans la fixture.
+8. Faire une relation OneToMany: à moitié OK, mais j'ai voulu ajouter des fixture, et la jointure est pas ok dans la fixture.
 
 Ma fixture a visiblement un problème de relation. Message d'erreur lors du fixture load:
   [Doctrine\ORM\ORMInvalidArgumentException]                                                                          
@@ -22,6 +22,7 @@ Ma fixture a visiblement un problème de relation. Message d'erreur lors du fixt
   ociation in the mapping for example @ManyToOne(..,cascade={"persist"}). If you cannot find out which entity causes  
    the problem implement 'MediaBundle\Entity\Album#__toString()' to get a clue.  
    
-   problème lors de la creation d'un commentaire.
-
+   problème lors de la creation d'un commentaire:
+   
+Catchable Fatal Error: Object of class MediaBundle\Entity\Album could not be converted to string 
 

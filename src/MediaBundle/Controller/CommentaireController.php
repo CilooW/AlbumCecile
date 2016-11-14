@@ -65,11 +65,12 @@ class CommentaireController extends Controller
         ));
     }
 
+
     /**
      * Displays a form to edit an existing commentaire entity.
      *
      */
-    public function editAction(Request $request, Commentaire $commentaire)
+    /*public function editAction(Request $request, Commentaire $commentaire)
     {
         $deleteForm = $this->createDeleteForm($commentaire);
         $editForm = $this->createForm('MediaBundle\Form\CommentaireType', $commentaire);
@@ -87,7 +88,7 @@ class CommentaireController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
+*/
     /**
      * Deletes a commentaire entity.
      *
