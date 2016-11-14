@@ -7,11 +7,11 @@
  * Time: 09:54
  */
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use MediaBundle\Entity\Album;
+use MediaBundle\Entity\Commentaire;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 
-class LoadAlbumData extends AbstractFixture implements FixtureInterface
+class LoadCommentaireData extends AbstractFixture implements FixtureInterface
 {
 
     /**
@@ -21,21 +21,21 @@ class LoadAlbumData extends AbstractFixture implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $album = new Album();
-        $album->setTitle('Studio Ghibli Best Of');
-        $album->setArtiste('Joe Hisaishi');
-        $album->setGenre('Soul');
-        $album->setSupport('Cassette');
+        $commentaire = new Commentaire();
 
-        $manager->persist($album);
+        $commentaire->setUtilisateur('Ciloo');
+        $commentaire->setCommentaire('Absolument parfait');
+        $commentaire->setAlbums($this->getReference('album-ghibli'));
+
+        $manager->persist($commentaire);
         $manager->flush();
         $manager->clear();
 
-        $this->addReference('album-ghibli', $album);
+        $this->addReference('comms', $commentaire);
     }
 
     public function getOrder()
     {
-        return 1;
+        return 2;
     }
 }

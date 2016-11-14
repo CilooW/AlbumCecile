@@ -1,0 +1,24 @@
+MediaBundle\Entity\Commentaire:
+    type: entity
+    table: null
+    repositoryClass: MediaBundle\Repository\CommentaireRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        utilisateur:
+            type: string
+            length: 255
+        commentaire:
+            type: text
+    manyToOne:
+        albums:
+            targetEntity: Album
+            inversedBy: comms
+            joinColumn:
+                name: album_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }
