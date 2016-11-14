@@ -1,9 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Albums list</h1>
+  {% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  {% endblock %}
 
-    <table>
+
+{% block body %}
+
+
+        <h1 class="title">Liste des Albums</h1>
+
+
+    <table class="highlight">
         <thead>
             <tr>
                 <th>Id</th>
@@ -25,10 +33,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('album_show', { 'id': album.id }) }}">show</a>
+                            <a href="{{ path('album_show', { 'id': album.id }) }}">voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('album_edit', { 'id': album.id }) }}">edit</a>
+                            <a href="{{ path('album_edit', { 'id': album.id }) }}">éditer</a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +45,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="create-album">
         <li>
             <a href="{{ path('album_new') }}"><button>Créer un nouvel album</button></a>
         </li>
