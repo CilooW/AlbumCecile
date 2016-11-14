@@ -22,5 +22,6 @@ Ma fixture a visiblement un problème de relation. Message d'erreur lors du fixt
   ociation in the mapping for example @ManyToOne(..,cascade={"persist"}). If you cannot find out which entity causes  
    the problem implement 'MediaBundle\Entity\Album#__toString()' to get a clue.  
    
+   problème lors de la creation d'un commentaire.
 
 

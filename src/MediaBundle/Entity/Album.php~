@@ -19,6 +19,8 @@ class Album
      */
     private $title;
 
+
+
     /**
      * @var string
      */
@@ -42,29 +44,6 @@ class Album
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     * @return Album
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
     }
 
     /**
@@ -129,10 +108,33 @@ class Album
     /**
      * Get support
      *
-     * @return string 
+     * @return string
      */
     public function getSupport()
     {
         return $this->support;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Album
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 }

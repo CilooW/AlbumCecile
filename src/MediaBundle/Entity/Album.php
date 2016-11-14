@@ -3,7 +3,6 @@
 namespace MediaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use MediaBundle\Entity\Commentaire as Commentaire;
 
 /**
  * Album
@@ -19,6 +18,8 @@ class Album
      * @var string
      */
     private $title;
+
+
 
     /**
      * @var string
@@ -43,29 +44,6 @@ class Album
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     * @return Album
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
     }
 
     /**
@@ -130,11 +108,34 @@ class Album
     /**
      * Get support
      *
-     * @return string 
+     * @return string
      */
     public function getSupport()
     {
         return $this->support;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Album
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -156,7 +157,7 @@ class Album
      *
      * @return Album
      */
-    public function addComm(Commentaire $comm)
+    public function addComm(\MediaBundle\Entity\Commentaire $comm)
     {
         $this->comms[] = $comm;
 
@@ -168,7 +169,7 @@ class Album
      *
      * @param \MediaBundle\Entity\Commentaire $comm
      */
-    public function removeComm(Commentaire $comm)
+    public function removeComm(\MediaBundle\Entity\Commentaire $comm)
     {
         $this->comms->removeElement($comm);
     }
